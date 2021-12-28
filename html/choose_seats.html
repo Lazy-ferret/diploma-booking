@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking Service (Choose seats page)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="datepicker.min.css">
+
+
+
+</head>
+
+<body class='App'>
+
+    <header class="container Header Header_order">
+        <div class="Header-Logo">
+            <span>Лого</span>
+        </div>
+
+        <div class="Header-Menu">
+            <ul class="Header-Menu_list">
+                <li class="Header-Menu_item">О нас</li>
+                <li class="Header-Menu_item">Как это работает</li>
+                <li class="Header-Menu_item">Отзывы</li>
+                <li class="Header-Menu_item">Контакты</li>
+            </ul>
+        </div>
+
+        <div class="Header-SearchForm_container Header-SearchForm-Order_container">
+            <form class="Header-SearchForm">
+
+                <div class="SearchForm-Section_container">
+                    <div class="SearchForm-Section SearchForm_direction">
+                        <div class="SearchForm-Section_title">Направление</div>
+                        <div class="SearchForm-Input_container">
+                            <input type="text" class="SearchForm-Input Input_direction" placeholder="Откуда">
+                            <div class="Input_changeBtn"></div>
+                            <input type="text" class="SearchForm-Input Input_direction" placeholder="Куда">
+                        </div>
+                    </div>
+
+                    <div class="SearchForm-Section SearchForm_date">
+                        <div class="SearchForm-Section_title">Дата</div>
+                        <div class='SearchForm-Input_container'>
+                            <input type="text" class="SearchForm-Input Input_date Input_date_start"
+                                placeholder="ДД/ММ/ГГ">
+                            <input type="text" class="SearchForm-Input Input_date Input_date_end"
+                                placeholder="ДД/ММ/ГГ">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="SerchForm-Button btn">Найти билеты</button>
+            </form>
+        </div>
+
+        <div class="Header-Progressbar Header-Progressbar_order">
+
+            <div class="Progressbar-Item Progressbar-Item_active">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">1</span>
+                    <span class="Progressbar-Item-name">Билеты</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="Progressbar-Item">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">2</span>
+                    <span class="Progressbar-Item-name">Пассажиры</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="Progressbar-Item">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">3</span>
+                    <span class="Progressbar-Item-name">Оплата</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="Progressbar-Item">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">4</span>
+                    <span class="Progressbar-Item-name">Проверка</span>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="container main">
+
+        <div class="Order-Container">
+
+            <aside class="Order-Details">
+
+                <section class="Details Details-FilterRoutes">
+
+                    <form class="Details-DateFilter">
+                        <div class="DateFilter-Input_container departure_date">
+                            <div class="DateFilter-Input_title">Дата поездки</div>
+                            <input type="text" class="DateFilter-Input Input_departure_date" placeholder="ДД/ММ/ГГ">
+                        </div>
+                        <div class="DateFilter-Input_container return_date">
+                            <div class="DateFilter-Input_title">Дата возвращения</div>
+                            <input type="text" class="DateFilter-Input Input_return_date" placeholder="ДД/ММ/ГГ">
+                        </div>
+                    </form>
+
+                    <div class="Details-DetailsFilter">
+                        <ul class="DetailsFilter-List">
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/first_class-icon.png" alt="first_class-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Купе</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-on"></span>
+                                </label>
+                            </li>
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/second_class-icon.png" alt="second_class-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Плацкарт</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-off"></span>
+                                </label>
+                            </li>
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/third_class-icon.png" alt="third_class-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Сидячий</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-off"></span>
+                                </label>
+                            </li>
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/luxe-icon.png" alt="luxe-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Люкс</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-off"></span>
+                                </label>
+                            </li>
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/wi_fi-icon.png" alt="wi_fi-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Wi-Fi</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-on"></span>
+                                </label>
+                            </li>
+
+                            <li class="DetailsFilter-Item">
+                                <div class="DetailsFilter-Item-Icon">
+                                    <img src="img/express-icon.png" alt="express-icon" class="Icon_image">
+                                </div>
+                                <span class="DetailsFilter-Item-Title">Экспресс</span>
+                                <label class="DetailsFilter-Item-Switch">
+                                    <input type="checkbox" class="Switch-input">
+                                    <span class="Switch-btn switch-off"></span>
+                                </label>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="Details-PriceFilter">
+                        <div class="Details-PriceFilter_title">Стоимость</div>
+
+                        <div class="Details-PriceFilter-fromTo">
+                            <span class="fromTo_from">от</span>
+                            <span class="fromTo_to">до</span>
+                        </div>
+
+                        <div class="Details-PriceFilter-slider">
+                            <div class="slider-layout">
+                                <div class="slider-min price-slider"></div>
+                                <div class="slider-current price-slider"></div>
+                                <div class="slider-max price-slider"></div>
+                            </div>
+                        </div>
+
+                        <div class="Details-PriceFilter-price">
+                            <span class="price-min">1920</span>
+                            <span class="price-current">4500</span>
+                            <span class="price-max">7000</span>
+                        </div>
+                    </div>
+
+                    <div class="forward-direction_container">
+                        <div class="Details-Direction forward-direction">
+                            <div class="Details-Direction-Icon">
+                                <img src="img/forward-icon.png" alt="" class="forward-direction_image">
+                            </div>
+                            <div class="Details-Direction_title">Туда</div>
+                            <div class="Details-Direction-btn active dropdown-btn"></div>
+                        </div>
+
+                        <div class="Details-TimeFilter-slider_container">
+                            <div class="Details-TimeFilter-slider departure">
+                                <div class="slider-title departure">Время отбытия</div>
+                                <div class="TimeFilter-slider-layout">
+                                    <div class="slider-min"></div>
+                                    <div class="TimeFilter-slider-current departure"></div>
+                                    <div class="slider-max"></div>
+                                </div>
+                                <div class="Details-TimeFilter-time">
+                                    <span class="time-min">0:00</span>
+                                    <span class="time-current departure">11:00</span>
+                                    <span class="time-max">24:00</span>
+                                </div>
+                            </div>
+
+                            <div class="Details-TimeFilter-slider arrival">
+                                <div class="slider-title arrival">Время прибытия</div>
+                                <div class="TimeFilter-slider-layout">
+                                    <div class="slider-min"></div>
+                                    <div class="TimeFilter-slider-current arrival"></div>
+                                    <div class="slider-max"></div>
+                                </div>
+                                <div class="Details-TimeFilter-time">
+                                    <span class="time-min">5:00</span>
+                                    <span class="time-current arrival">11:00</span>
+                                    <span class="time-max">24:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="backward-direction_container">
+
+                        <div class="Details-Direction backward-direction">
+                            <div class="Details-Direction-Icon">
+                                <img src="img/backward-icon.png" alt="" class="backward-direction_image">
+                            </div>
+                            <div class="Details-Direction_title">Обратно</div>
+                            <div class="Details-Direction-btn active dropdown-btn"></div>
+                        </div>
+
+                        <div class="Details-TimeFilter-slider_container">
+                            <div class="Details-TimeFilter-slider departure">
+                                <div class="slider-title departure">Время отбытия</div>
+                                <div class="TimeFilter-slider-layout">
+                                    <div class="slider-min"></div>
+                                    <div class="TimeFilter-slider-current departure"></div>
+                                    <div class="slider-max"></div>
+                                </div>
+                                <div class="Details-TimeFilter-time">
+                                    <span class="time-min">0:00</span>
+                                    <span class="time-current departure">11:00</span>
+                                    <span class="time-max">24:00</span>
+                                </div>
+                            </div>
+
+                            <div class="Details-TimeFilter-slider arrival">
+                                <div class="slider-title arrival">Время прибытия</div>
+                                <div class="TimeFilter-slider-layout">
+                                    <div class="slider-min"></div>
+                                    <div class="TimeFilter-slider-current arrival"></div>
+                                    <div class="slider-max"></div>
+                                </div>
+                                <div class="Details-TimeFilter-time">
+                                    <span class="time-min">5:00</span>
+                                    <span class="time-current arrival">11:00</span>
+                                    <span class="time-max">24:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="Details-LastTickets">
+                    <h3 class="LastTickets-Title">Последние билеты</h3>
+
+                    <ul class="LastTickets-List">
+
+                        <li class="LastTickets-Item">
+                            <div class="LastTickets-Item-route">
+                                <div class='departure-station'>
+                                    <span class="route-city-name">Санкт-Петербург</span>
+                                    <span class="route-station-name">Курский вокзал</span>
+                                </div>
+                                <div class='arrival-station'>
+                                    <span class="route-city-name">Самара</span>
+                                    <span class="route-station-name">Московский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class="LastTickets-Item-details">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+
+                                <div class="LastTickets-Item-price">
+                                    от
+                                    <span class='Item-price_value'>2 500</span>
+                                    <span class='rouble'>₽</span>
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                        <li class="LastTickets-Item">
+                            <div class="LastTickets-Item-route">
+                                <div class='departure-station'>
+                                    <span class="route-city-name">Москва</span>
+                                    <span class="route-station-name">Курский вокзал</span>
+                                </div>
+                                <div class='arrival-station'>
+                                    <span class="route-city-name">Казань</span>
+                                    <span class="route-station-name">Московский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class="LastTickets-Item-details">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+
+                                <div class="LastTickets-Item-price">
+                                    от
+                                    <span class='Item-price_value'>3 500</span>
+                                    <span class='rouble'>₽</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="LastTickets-Item">
+                            <div class="LastTickets-Item-route">
+                                <div class='departure-station'>
+                                    <span class="route-city">Казань</span>
+                                    <span class="route-station-name">Курский вокзал</span>
+                                </div>
+                                <div class='arrival-station'>
+                                    <span class="route-city">Нижний Новгород</span>
+                                    <span class="route-station-name">Московский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class="LastTickets-Item-details">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+
+                                <div class="LastTickets-Item-price">
+                                    от
+                                    <span class='Item-price_value'>3 800</span>
+                                    <span class='rouble'>₽</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </section>
+            </aside>
+
+            <section class="Order-Result">
+
+                <div class="Order-ChooseSeats-header">
+                    <div class="ChooseSeats-title">
+                        Выбор мест
+                    </div>
+                </div>
+
+                <div class='Order-ChooseSeats-container'>
+
+                    <div class='Order-ChooseSeats chooseSeats-forward'>
+
+                        <div class='ChooseSeats-CnangeTrain chooseSeats-forward'>
+                            <div class='ChooseSeats-direction_icon chooseSeats-forward'></div>
+                            <button class='ChooseSeats-CnangeTrain-btn btn'>Выбрать другой поезд</button>
+                        </div>
+
+                        <div class='ChooseSeats-Route-info'>
+
+                            <div class='ChooseSeats-train-info'>
+                                <div class="ChooseSeats-train-icon">
+                                    <img src="img/train-icon_yellow.png" alt="train-icon">
+                                </div>
+                                <div class="ChooseSeats-train_wrapper">
+                                    <div class="ChooseSeats-train-number">116C</div>
+                                    <div class="ChooseSeats-train-route">
+                                        <div class="route-starting-point">
+                                            <span>Адлер →</span>
+                                        </div>
+                                        <div class="route-departure-point">
+                                            <span>Москва →</span>
+                                        </div>
+                                        <div class="route-destination-point">
+                                            <span>Санкт-Петербург</span>
+                                        </div>
+                                        <div class="train-firmName">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='ChooseSeats-time-info'>
+                                <div class='ChooseSeats-time-container forward-direction'>
+                                    <div class='ChooseSeats-time-wrapper departure-time'>
+                                        <span class="ChooseSeats-time-time">00:10</span>
+                                        <span class="ChooseSeats-time-city">Москва</span>
+                                        <span class="ChooseSeats-time-station">Курский вокзал</span>
+                                    </div>
+                                    <div class="ChooseSeats-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                    <div class='ChooseSeats-time-wrapper arrival-time'>
+                                        <span class="ChooseSeats-time-time">09:52</span>
+                                        <span class="ChooseSeats-time-city">Санкт-Петербург</span>
+                                        <span class="ChooseSeats-time-station">Ладожский вокзал</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ChooseSeats-duration_wrapper">
+                                <div class="ChooseSeats-duration-icon">
+                                    <img src="img/duration-icon_yellow.png" alt="duration-icon">
+                                </div>
+                                <div class="ChooseSeats-duration">
+                                    <span>9 часов</span>
+                                    <span>42 минуты</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='ChooseSeats-TicketsQuantity'>
+                            <div class='TicketsQuantity-title'>Количество билетов</div>
+                            <div class='TicketsQuantity-container'>
+                                <div class='TicketsQuantity-type current'>
+                                    <div class='TicketsQuantity-type-quantity'>Взрослых —
+                                        <span>2</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'>
+                                        Можно добавить еще 3 пассажиров
+                                    </div>
+                                </div>
+                                <div class='TicketsQuantity-type active'>
+                                    <div class='TicketsQuantity-type-quantity'>Детских —
+                                        <span>1</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'>
+                                        Можно добавить еще 3 детей до 10 лет. Свое место
+                                        в вагоне, как у взрослых, но дешевле в среднем
+                                        на 50-65%
+                                    </div>
+                                </div>
+                                <div class='TicketsQuantity-type'>
+                                    <div class='TicketsQuantity-type-quantity'> Детских «без места» —
+                                        <span>0</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='ChooseSeats-CarType'>
+                            <div class='CarType-title'>Тип вагона</div>
+                            <div class='CarType-container'>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon third_class'></div>
+                                    <span class='CarType-name'>Сидячий</span>
+                                </div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon second_class'></div>
+                                    <span class='CarType-name'>Плацкарт</span>
+                                </div>
+                                <div class='CarType-type active'>
+                                    <div class='CarType-icon first_class active'></div>
+                                    <span class='CarType-name'>Купе</span>
+                                </div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon luxe'></div>
+                                    <span class='CarType-name'>Люкс</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='ChooseSeats-Details'>
+                            
+                            <div class='Details-Car-numbers_container'>
+                                <div class='Car-numbers'>
+                                    <span>Вагоны</span>
+                                    <ul class='Car-numbers_list'>
+                                        <li class='Car-numbers_item current'>07</li>
+                                        <li class='Car-numbers_item'>09</li>
+                                    </ul>
+                                </div>
+                                <div class='Car-numbers-hint'>Нумерация вагонов
+                                    начинается с головы поезда
+                                </div>
+                            </div>
+
+                            <div class='Details-CurrentCar_container'>
+                                <div class='CurrentCar-number'>
+                                    <span class='car-number'>07</span>
+                                    <span>вагон</span>
+                                </div>
+
+                                <div class='CurrentCar-seats'>
+                                    <div class='seats-total'>
+                                        <span>Места</span>
+                                        <span class='seats-total_quantity'>11</span>
+                                    </div>
+                                    <div class='seats-upper'>
+                                        <span>Верхние</span>
+                                        <span class='seats-upper_quantity'>3</span>
+                                    </div>
+                                    <div class='seats-lower'>
+                                        <span>Нижние</span>
+                                        <span class='seats-lower_quantity'>8</span>
+                                    </div>
+                                </div>
+
+
+                                <div class='CurrentCar-price'>
+                                    <div class='CurrentCar-price-title'>Стоимость</div>                                    
+                                    <div class="Route-price upper">
+                                        <span class='Route-price_value'>2 920</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                    <div class="Route-price lower">
+                                        <span class='Route-price_value'>3 530</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </div>
+
+                                <div class='CurrentCar-features'>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div class='Order-ChooseSeats chooseSeats-backward'>
+                        <div class='ChooseSeats-CnangeTrain chooseSeats-backward'>
+                            <div class='ChooseSeats-direction_icon chooseSeats-backward'></div>
+                            <button class='ChooseSeats-CnangeTrain-btn btn'>Выбрать другой поезд</button>
+                        </div>
+
+                        <div class='ChooseSeats-Route-info'>
+
+                            <div class='ChooseSeats-train-info'>
+                                <div class="ChooseSeats-train-icon">
+                                    <img src="img/train-icon_yellow.png" alt="train-icon">
+                                </div>
+                                <div class="ChooseSeats-train_wrapper">
+                                    <div class="ChooseSeats-train-number">116C</div>
+                                    <div class="ChooseSeats-train-route">
+                                        <div class="route-starting-point">
+                                            <span>Адлер →</span>
+                                        </div>
+                                        <div class="route-departure-point">
+                                            <span>Москва →</span>
+                                        </div>
+                                        <div class="route-destination-point">
+                                            <span>Санкт-Петербург</span>
+                                        </div>
+                                        <div class="train-firmName">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class='ChooseSeats-time-info'>
+                                <div class='ChooseSeats-time-container backward-direction'>
+                                    <div class='ChooseSeats-time-wrapper departure-time'>
+                                        <span class="ChooseSeats-time-time">00:10</span>
+                                        <span class="ChooseSeats-time-city">Москва</span>
+                                        <span class="ChooseSeats-time-station">Курский вокзал</span>
+                                    </div>
+                                    <div class="ChooseSeats-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                    <div class='ChooseSeats-time-wrapper arrival-time'>
+                                        <span class="ChooseSeats-time-time">09:52</span>
+                                        <span class="ChooseSeats-time-city">Санкт-Петербург</span>
+                                        <span class="ChooseSeats-time-station">Ладожский вокзал</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ChooseSeats-duration_wrapper">
+                                <div class="ChooseSeats-duration-icon">
+                                    <img src="img/duration-icon_yellow.png" alt="duration-icon">
+                                </div>
+                                <div class="ChooseSeats-duration">
+                                    <span>9 часов</span>
+                                    <span>42 минуты</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='ChooseSeats-TicketsQuantity'>
+                            <div class='TicketsQuantity-title'>Количество билетов</div>
+                            <div class='TicketsQuantity-container'>
+                                <div class='TicketsQuantity-type current'>
+                                    <div class='TicketsQuantity-type-quantity'>Взрослых —
+                                        <span>2</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'>
+                                        Можно добавить еще 3 пассажиров
+                                    </div>
+                                </div>
+                                <div class='TicketsQuantity-type'>
+                                    <div class='TicketsQuantity-type-quantity'>Детских —
+                                        <span>1</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'>
+                                    </div>
+                                </div>
+                                <div class='TicketsQuantity-type'>
+                                    <div class='TicketsQuantity-type-quantity'> Детских «без места» —
+                                        <span>0</span>
+                                    </div>
+                                    <div class='TicketsQuantity-type-hint'></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='ChooseSeats-CarType'>
+                            <div class='CarType-title'>Тип вагона</div>
+                            <div class='CarType-container'>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon third_class'></div>
+                                    <span class='CarType-name'>Сидячий</span>
+                                </div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon second_class'></div>
+                                    <span class='CarType-name'>Плацкарт</span>
+                                </div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon first_class'></div>
+                                    <span class='CarType-name'>Купе</span>
+                                </div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon luxe'></div>
+                                    <span class='CarType-name'>Люкс</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <ul class="Result-Routes-list">
+
+                    <li class='Result-Routes-item'>
+                        <div class='Route-train-info'>
+                            <div class="Route-train-icon">
+                                <img src="img/train-icon.png" alt="train-icon">
+                            </div>
+
+                            <div class="Route-train-number">116C</div>
+
+                            <div class="Route-train-route">
+                                <div class="route-starting-point">
+                                    <span>Адлер →</span>
+                                </div>
+
+                                <div class="route-departure-point">
+                                    <span>Москва →</span>
+                                </div>
+
+                                <div class="route-destination-point">
+                                    <span>Санкт-Петербург</span>
+                                </div>
+
+                                <div class="train-firmName">
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class='Route-time-info'>
+                            <div class='Route-time-container forward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class='Route-time-container backward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-price-info'>
+
+                            <ul class='Route-price-classes_list'>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Сидячий</span>
+                                    <span class='available_seats'>88</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>1 920</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Плацкарт</span>
+                                    <span class='available_seats'>52</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>2 530</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Купе</span>
+                                    <span class='available_seats'>24</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>3 820</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Люкс</span>
+                                    <span class='available_seats'>15</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>4 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="Route-ChooseSeats-wrapper">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+                                <button class="Route-ChooseSeats-btn btn">Выбрать места</button>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class='Result-Routes-item'>
+                        <div class='Route-train-info'>
+                            <div class="Route-train-icon">
+                                <img src="img/train-icon.png" alt="train-icon">
+                            </div>
+
+                            <div class="Route-train-number">020У</div>
+
+                            <div class="Route-train-route">
+                                <div class="route-starting-point">
+                                    <span></span>
+                                    <!-- <img src="img/arrow_right_grey.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-departure-point">
+                                    <span>Москва →</span>
+                                    <!-- <img src="img/arrow_right_black.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-destination-point">
+                                    <span>Санкт-Петербург</span>
+                                </div>
+
+                                <div class="train-firmName">
+                                    <span>«Мегаполис»</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-time-info'>
+                            <div class='Route-time-container forward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">00:20</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Ленинградский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">8 : 39</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">08:59</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Московский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class='Route-time-container backward-direction'>
+                            </div>
+
+                        </div>
+
+                        <div class='Route-price-info'>
+
+                            <ul class='Route-price-classes_list'>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Купе</span>
+                                    <span class='available_seats'>90</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>3 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Люкс</span>
+                                    <span class='available_seats'>31</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>4 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="Route-ChooseSeats-wrapper">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+                                <button class="Route-ChooseSeats-btn btn">Выбрать места</button>
+                            </div>
+                    </li>
+
+                    <li class='Result-Routes-item'>
+                        <div class='Route-train-info'>
+                            <div class="Route-train-icon">
+                                <img src="img/train-icon.png" alt="train-icon">
+                            </div>
+
+                            <div class="Route-train-number">116C</div>
+
+                            <div class="Route-train-route">
+                                <div class="route-starting-point">
+                                    <span>Нижний Новгород →</span>
+                                    <!-- <img src="img/arrow_right_grey.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-departure-point">
+                                    <span>Москва →</span>
+                                    <!-- <img src="img/arrow_right_black.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-destination-point">
+                                    <span>Санкт-Петербург</span>
+                                </div>
+
+                                <div class="train-firmName">
+                                    <span>«Волга»</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-time-info'>
+                            <div class='Route-time-container forward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">00:41</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Ленинградский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">8 : 32</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">09:13</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class='Route-time-container backward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">09:13</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">8 : 32</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">00:41</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Ленинградский вокзал</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-price-info'>
+
+                            <ul class='Route-price-classes_list'>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Плацкарт</span>
+                                    <span class='available_seats'>52</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>2 530</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Купе</span>
+                                    <span class='available_seats'>24</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>3 820</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Люкс</span>
+                                    <span class='available_seats'>15</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>4 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="Route-ChooseSeats-wrapper">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+                                <button class="Route-ChooseSeats-btn btn">Выбрать места</button>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class='Result-Routes-item'>
+                        <div class='Route-train-info'>
+                            <div class="Route-train-icon">
+                                <img src="img/train-icon.png" alt="train-icon">
+                            </div>
+
+                            <div class="Route-train-number">116C</div>
+
+                            <div class="Route-train-route">
+                                <div class="route-starting-point">
+                                    <span>Адлер →</span>
+                                    <!-- <img src="img/arrow_right_grey.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-departure-point">
+                                    <span>Москва →</span>
+                                    <!-- <img src="img/arrow_right_black.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-destination-point">
+                                    <span>Санкт-Петербург</span>
+                                </div>
+
+                                <div class="train-firmName">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-time-info'>
+                            <div class='Route-time-container forward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class='Route-time-container backward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-price-info'>
+
+                            <ul class='Route-price-classes_list'>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Сидячий</span>
+                                    <span class='available_seats'>88</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>1 920</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Плацкарт</span>
+                                    <span class='available_seats'>52</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>2 530</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Купе</span>
+                                    <span class='available_seats'>24</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>3 820</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Люкс</span>
+                                    <span class='available_seats'>15</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>4 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="Route-ChooseSeats-wrapper">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+                                <button class="Route-ChooseSeats-btn btn">Выбрать места</button>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class='Result-Routes-item'>
+                        <div class='Route-train-info'>
+                            <div class="Route-train-icon">
+                                <img src="img/train-icon.png" alt="train-icon">
+                            </div>
+
+                            <div class="Route-train-number">116C</div>
+
+                            <div class="Route-train-route">
+                                <div class="route-starting-point">
+                                    <span>Адлер →</span>
+                                    <!-- <img src="img/arrow_right_grey.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-departure-point">
+                                    <span>Москва →</span>
+                                    <!-- <img src="img/arrow_right_black.png" alt="arrow-right"> -->
+                                </div>
+
+                                <div class="route-destination-point">
+                                    <span>Санкт-Петербург</span>
+                                </div>
+
+                                <div class="train-firmName">
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class='Route-time-info'>
+                            <div class='Route-time-container forward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                            <div class='Route-time-container backward-direction'>
+                                <div class='Route-time-wrapper departure-time'>
+                                    <span class="Route-time-time">09:52</span>
+                                    <span class="Route-time-city">Санкт-Петербург</span>
+                                    <span class="Route-time-station">Ладожский вокзал</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='Route-time-wrapper arrival-time'>
+                                    <span class="Route-time-time">00:10</span>
+                                    <span class="Route-time-city">Москва</span>
+                                    <span class="Route-time-station">Курский вокзал</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='Route-price-info'>
+
+                            <ul class='Route-price-classes_list'>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Сидячий</span>
+                                    <span class='available_seats'>88</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>1 920</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Плацкарт</span>
+                                    <span class='available_seats'>52</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>2 530</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Купе</span>
+                                    <span class='available_seats'>24</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>3 820</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                                <li class='Route-price-class'>
+                                    <span class='class_name'>Люкс</span>
+                                    <span class='available_seats'>15</span>
+                                    <div class="Route-price">
+                                        от
+                                        <span class='Route-price_value'>4 950</span>
+                                        <span class='Route-price_rouble'>₽</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="Route-ChooseSeats-wrapper">
+                                <div class="details-icon_list">
+                                    <div class="details_icon">
+                                        <img src="img/wi_fi-icon.png" alt="wi_fi-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/express-icon.png" alt="express-icon">
+                                    </div>
+                                    <div class="details_icon">
+                                        <img src="img/coffee-icon.png" alt="coffee-icon">
+                                    </div>
+                                </div>
+                                <button class="Route-ChooseSeats-btn btn">Выбрать места</button>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+
+                <ul class="Routes-Pages-list">
+                    <li class="Routes-Pages-item btn">
+                        <img src="img/page-prev.png" alt="previous-page" class='previous-page'>
+                    </li>
+                    <li class="Routes-Pages-item current btn">
+                        <div class='page '>1</div>
+                    </li>
+                    <li class="Routes-Pages-item btn">
+                        <div class='page'>2</div>
+                    </li>
+                    <li class="Routes-Pages-item active btn">
+                        <div class='page'>3</div>
+                    </li>
+                    <li class="Routes-Pages-item btn">
+                        <img src="img/page-next.png" alt="next-page" class='previous-page'>
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+
+
+        </div>
+
+
+    </main>
+
+
+    <footer class="Footer container">
+
+        <div class="Footer-Contacts-container">
+            <address class="Footer-Contacts">
+                <h4 class="Contacts-Title">Свяжитесь с нами</h4>
+                <ul class="Contacts-List">
+                    <li class="Contacts-Item ">
+                        <div class="Contacts-Item_logo contacts-phone"></div>
+                        <div class="Contacts-Item_content">8 (800) 000 00 00</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-mail"></div>
+                        <div class="Contacts-Item_content">inbox@mail.ru</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-skype"></div>
+                        <div class="Contacts-Item_content">tu.train.tickets</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-address"></div>
+                        <div class="Contacts-Item_content">г. Москва<br>
+                            ул. Московская 27-35<br>555 555</div>
+                    </li>
+                </ul>
+            </address>
+
+            <div class="Footer-Subscribe-container">
+                <div class="Footer-Subscribe">
+                    <h4 class="Subscribe-Title">Подписка</h4>
+                    <form action="submit" class="Subscribe-Form">
+                        <div class="Subscribe-Form-title">Будьте в курсе событий</div>
+                        <div class="Subscribe-Input_container">
+                            <input class="Subscribe-Form-input" type="text" placeholder="e-mail">
+                            <button class="Subscribe-Form-button btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="Footer-Social">
+                    <h4 class="Social-Title">Подписывайтесь на нас</h4>
+                    <ul class="Social-List">
+                        <li class="Social-Item">
+
+                            <a href="https://www.youtube.com" class='Social-Item_link social-youtube'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.linkedin.com" class='Social-Item_link social-lnkdin'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.https://plus.google.com/" class='Social-Item_link social-google'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.facebook.com" class='Social-Item_link social-facebook'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.twitter.com" class='Social-Item_link social-twitter'></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="Footer-Logo-container">
+            <div class="Footer-Logo">
+                <span>Лого</span>
+            </div>
+
+            <div class="Footer-PageUpBtn">
+                <a href="" class='Footer-PageUpBtn_link'></a>
+            </div>
+
+            <div class="Footer-Copyright">
+                <span>2018 WEB</span>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+    <script src="datepicker.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
