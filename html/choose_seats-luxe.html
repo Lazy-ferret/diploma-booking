@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railway Ticket Booking Service (Choose seats page)</title>
+    <title>Railway Ticket Booking Service (Choose seats page - luxe)</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="datepicker.min.css">
 
@@ -495,7 +495,7 @@
                         <div class='ChooseSeats-TicketsQuantity'>
                             <div class='TicketsQuantity-title'>Количество билетов</div>
                             <div class='TicketsQuantity-container'>
-                                <div class='TicketsQuantity-type current'>
+                                <div class='TicketsQuantity-type'>
                                     <div class='TicketsQuantity-type-quantity'>Взрослых —
                                         <span>2</span>
                                     </div>
@@ -503,7 +503,7 @@
                                         Можно добавить еще 3 пассажиров
                                     </div>
                                 </div>
-                                <div class='TicketsQuantity-type active'>
+                                <div class='TicketsQuantity-type'>
                                     <div class='TicketsQuantity-type-quantity'>Детских —
                                         <span>1</span>
                                     </div>
@@ -533,12 +533,12 @@
                                     <div class='CarType-icon second_class'></div>
                                     <span class='CarType-name'>Плацкарт</span>
                                 </div>
-                                <div class='CarType-type active'>
-                                    <div class='CarType-icon first_class active'></div>
+                                <div class='CarType-type'>
+                                    <div class='CarType-icon first_class'></div>
                                     <span class='CarType-name'>Купе</span>
                                 </div>
-                                <div class='CarType-type'>
-                                    <div class='CarType-icon luxe'></div>
+                                <div class='CarType-type active'>
+                                    <div class='CarType-icon luxe active'></div>
                                     <span class='CarType-name'>Люкс</span>
                                 </div>
                             </div>
@@ -548,8 +548,8 @@
                             <div class='Car-numbers'>
                                 <span>Вагоны</span>
                                 <ul class='Car-numbers_list'>
-                                    <li class='Car-numbers_item current'>07</li>
-                                    <li class='Car-numbers_item'>09</li>
+                                    <li class='Car-numbers_item current'>02</li>
+                                    <li class='Car-numbers_item'>05</li>
                                 </ul>
                             </div>
                             <div class='Car-numbers-hint'>Нумерация вагонов
@@ -561,22 +561,22 @@
                             <div class='ChooseSeats-Details'>
                                 <div class='Details-CurrentCar_container'>
                                     <div class='CurrentCar-number'>
-                                        <span class='car-number'>07</span>
+                                        <span class='car-number'>02</span>
                                         <span>вагон</span>
                                     </div>
 
                                     <div class='CurrentCar-seats details_block'>
                                         <div class='seats-total'>
                                             <span>Места</span>
-                                            <span class='seats-total_quantity'>11</span>
+                                            <span class='seats-total_quantity'>8</span>
                                         </div>
                                         <div class='seats-upper'>
-                                            <div class='seats-category'>Верхние</div>
-                                            <div class='seats-upper_quantity'>3</div>
+                                            <div class='seats-category'></div>
+                                            <div class='seats-upper_quantity'></div>
                                         </div>
                                         <div class='seats-lower'>
-                                            <div class='seats-category'>Нижние</div>
-                                            <div class='seats-lower_quantity'>8</div>
+                                            <div class='seats-category'></div>
+                                            <div class='seats-lower_quantity'></div>
                                         </div>
                                     </div>
 
@@ -584,14 +584,10 @@
                                     <div class='CurrentCar-price-container details_block'>
                                         <div class='CurrentCar-price-title'>Стоимость</div>
 
-                                        <div class="CurrentCar-price upper">
-                                            <span class='CurrentCar-price_value'>2 920</span>
+                                        <div class="CurrentCar-price">
+                                            <span class='CurrentCar-price_value'>4 920</span>
                                             <span class='CurrentCar-price_rouble'>₽</span>
-                                        </div>
-                                        <div class="CurrentCar-price lower">
-                                            <span class='CurrentCar-price_value'>3 530</span>
-                                            <span class='CurrentCar-price_rouble'>₽</span>
-                                        </div>
+                                        </div>                                        
                                     </div>
 
                                     <div class='CurrentCar-features details_block'>
@@ -601,33 +597,30 @@
                                         </div>
 
                                         <div class='CurrentCar-features-icons'>
-                                            <div class='features-icon features-air_cond btn'>
-                                                <span class='features-hint'>кондиционер</span>
+                                            <div class='features-icon features-air_cond btn inactive'>
+                                                <span class='features-hint hidden'>кондиционер</span>
                                             </div>
-                                            <div class='features-icon features-wi_fi btn'>
+                                            <div class='features-icon features-wi_fi btn inactive'>
                                                 <span class='features-hint hidden'>WI-FI</span>
                                             </div>
-                                            <div class='features-icon features-linens btn choosen'>
+                                            <div class='features-icon features-linens btn inactive'>
                                                 <span class='features-hint hidden'>белье</span>
                                             </div>
                                             <div class='features-icon features-food btn choosen'>
                                                 <span class='features-hint hidden'>питание</span>
                                             </div>
                                         </div>
-
                                     </div>
-
-
                                 </div>
-
                             </div>
 
                             <div class='ChooseSeats-CarScheme'>
                                 <div class='CarScheme-hint'>
-                                    11 человек выбирают места в этом поезде
+                                    19 человек выбирают места в этом поезде
                                 </div>
-                                <div class='CarScheme-scheme first_class'></div>
+                                <div class='CarScheme-scheme luxe'></div>
                             </div>
+
                             <div class='ChooseSeats-TotalPrice'>
                                 <div class="TotalPrice-price">
                                     <span class='TotalPrice-price_value'></span>

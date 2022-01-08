@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking Service (Choose seats page)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="datepicker.min.css">
+
+
+
+</head>
+
+<body class='App'>
+
+    <header class="container Header Header_order">
+        <div class="Header-Logo">
+            <span>Лого</span>
+        </div>
+
+        <div class="Header-Menu">
+            <ul class="Header-Menu_list">
+                <li class="Header-Menu_item">О нас</li>
+                <li class="Header-Menu_item">Как это работает</li>
+                <li class="Header-Menu_item">Отзывы</li>
+                <li class="Header-Menu_item">Контакты</li>
+            </ul>
+        </div>
+
+        <div class="Header-SearchForm_container Header-SearchForm-Order_container">
+            <form class="Header-SearchForm">
+
+                <div class="SearchForm-Section_container">
+                    <div class="SearchForm-Section SearchForm_direction">
+                        <div class="SearchForm-Section_title">Направление</div>
+                        <div class="SearchForm-Input_container">
+                            <input type="text" class="SearchForm-Input Input_direction" placeholder="Откуда">
+                            <div class="Input_changeBtn"></div>
+                            <input type="text" class="SearchForm-Input Input_direction" placeholder="Куда">
+                        </div>
+                    </div>
+
+                    <div class="SearchForm-Section SearchForm_date">
+                        <div class="SearchForm-Section_title">Дата</div>
+                        <div class='SearchForm-Input_container'>
+                            <input type="text" class="SearchForm-Input Input_date Input_date_start"
+                                placeholder="ДД/ММ/ГГ">
+                            <input type="text" class="SearchForm-Input Input_date Input_date_end"
+                                placeholder="ДД/ММ/ГГ">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="SerchForm-Button btn">Найти билеты</button>
+            </form>
+        </div>
+
+        <div class="Header-Progressbar Header-Progressbar_order">
+
+            <div class="Progressbar-Item Progressbar-Item_active">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">1</span>
+                    <span class="Progressbar-Item-name">Билеты</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="Progressbar-Item Progressbar-Item_active">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">2</span>
+                    <span class="Progressbar-Item-name">Пассажиры</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="Progressbar-Item">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">3</span>
+                    <span class="Progressbar-Item-name">Оплата</span>
+                </div>
+                <div class="Progressbar-Item-arrow">
+                    <svg class="arrow" viewBox="0 0 45 100" preserveAspectRatio="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,0 30,50 0,100" stroke="white" stroke-width="1"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="Progressbar-Item">
+                <div class="Progressbar-Item-content">
+                    <span class="Progressbar-Item-number">4</span>
+                    <span class="Progressbar-Item-name">Проверка</span>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="container main">
+
+        <div class="Order-Container">
+
+            <aside class="Order-Details">
+
+                <section class="Details Details-Passengers">
+
+                    <div class="Details-Passengers-title">Детали поездки</div>
+
+                    <div class="forward-direction_container direction_container">
+                        <div class="Details-Direction forward-direction">
+                            <div class="Details-Direction-Icon">
+                                <img src="img/forward-icon.png" alt="" class="forward-direction_image">
+                            </div>
+                            <div class="Details-Direction_title">
+                                <span>Туда</span>
+                                <span class="Details-travel-date">30.08.2018</span>
+                            </div>
+                            <div class="Details-Direction-btn active dropdown-btn"></div>
+                        </div>
+
+                        <div class='train-info train-number'>
+                            <div class="train-info_title">№ Поезда</div>
+                            <div class="train-info_value">
+                                <span>116C</span>
+                            </div>
+                        </div>
+                        <div class='train-info train-name'>
+                            <div class="train-info_title">Название</div>
+                            <div class="train-info_value">
+                                <span>Адлер</span>
+                                <span>Санкт-Петербург</span>
+                            </div>
+                        </div>
+
+                        <div class='Details-time-info'>
+
+                            <div class='Details-time-container forward-direction'>
+                                <div class='time-wrapper departure-time'>
+                                    <span class="route-time">00:10</span>
+                                    <span class="route-date">30.08.2018</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-right-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='time-wrapper arrival-time'>
+                                    <span class="route-time">09:52</span>
+                                    <span class="route-date">31.08.2018</span>
+                                </div>
+                            </div>
+
+
+                            <div class='Details-route-info'>
+                                <div class='Details-route departure-point'>
+                                    <span class="route-city">Москва</span>
+                                    <span class="route-station">Курский вокзал</span>
+                                </div>
+                                <div class='Details-route destination-point'>
+                                    <span class="route-city">Санкт-Петербург</span>
+                                    <span class="route-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="backward-direction_container direction_container">
+                        <div class="Details-Direction backward-direction">
+                            <div class="Details-Direction-Icon">
+                                <img src="img/backward-icon.png" alt="" class="backward-direction_image">
+                            </div>
+                            <div class="Details-Direction_title">
+                                <span>Обратно</span>
+                                <span class="Details-travel-date">09.09.2018</span>
+                            </div>
+                            <div class="Details-Direction-btn active dropdown-btn"></div>
+                        </div>
+
+                        <div class='train-info train-number'>
+                            <div class="train-info_title">№ Поезда</div>
+                            <div class="train-info_value">
+                                <span>116C</span>
+                            </div>
+                        </div>
+                        <div class='train-info train-name'>
+                            <div class="train-info_title">Название</div>
+                            <div class="train-info_value">
+                                <span>Адлер</span>
+                                <span>Санкт-Петербург</span>
+                            </div>
+                        </div>
+
+                        <div class='Details-time-info'>
+
+                            <div class='Details-time-container backward-direction'>
+                                <div class='time-wrapper departure-time'>
+                                    <span class="route-time">09:52</span>
+                                    <span class="route-date">08.09.2018</span>
+                                </div>
+                                <div class="route-duration_wrapper">
+                                    <span class="route-duration">9 : 42</span>
+                                    <div class="route-direction-arrow">
+                                        <img src="img/arrow-left-yellow.png" alt="direction-arrow">
+                                    </div>
+                                </div>
+                                <div class='time-wrapper arrival-time'>
+                                    <span class="route-time">00:10</span>
+                                    <span class="route-date">09.09.2018</span>
+                                </div>
+                            </div>
+
+
+                            <div class='Details-route-info'>
+                                <div class='Details-route departure-point'>
+                                    <span class="route-city">Москва</span>
+                                    <span class="route-station">Курский вокзал</span>
+                                </div>
+                                <div class='Details-route destination-point'>
+                                    <span class="route-city">Санкт-Петербург</span>
+                                    <span class="route-station">Ладожский вокзал</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="price_container">
+
+                        <div class="Details-Passengers-price">
+                            <div class="Details-Passengers-icon">
+                                <img src="img/passenger-icon.png" alt="" class="forward-direction_image">
+                            </div>
+                            <div class="Details-Direction_title">
+                                <span>Пассажиры</span>
+                            </div>
+                            <div class="Details-Direction-btn active dropdown-btn"></div>
+                        </div>
+
+                        <div class="Details-Passengers-currentPrice">
+
+                            <div class='currentPrice-wrapper'>
+                                <div class='Passengers-ticketType'>
+                                    <span class='Passengers-ticketType_quantity'>2</span>
+                                    <span class='Passengers-ticketType_type'>Взрослых</span>
+                                </div>
+                                <div class="currentPrice-price">
+                                    <span class='currentPrice-price_value'>5 840</span>
+                                    <span class='currentPrice-price_rouble'>₽</span>
+                                </div>
+                            </div>
+
+                            <div class='currentPrice-wrapper'>
+                                <div class='Passengers-ticketType'>
+                                    <span class='Passengers-ticketType_quantity'>1</span>
+                                    <span class='Passengers-ticketType_type'>Ребенок</span>
+                                </div>
+                                <div class="currentPrice-price">
+                                    <span class='currentPrice-price_value'>1 920</span>
+                                    <span class='currentPrice-price_rouble'>₽</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="Details-Passengers-totalPrice">
+                            <div class='totalPrice-title'>Итог</div>
+                            <div class="totalPrice-price">
+                                <span class='totalPrice-price_value'>7 760</span>
+                                <span class='totalPrice-price_rouble'>₽</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </aside>
+
+            <section class="Order-Result">
+
+                <div class='Order-Passengers-container'>
+
+                    <div class='Passenger-Info active'>
+                        <div class='Passenger-Info-title active'>
+                            <div class='Passenger-Info-btn active btn'></div>
+                            <div class='Info-title_value'>Пассажир 1</div>
+                            <div class='Passenger-Info-btn delete_btn btn'></div>
+                        </div>
+
+                        <div class='Passenger-Info-personalData Passenger-Info_data'>
+                            <div class='personalData-age'>
+                                <select class='personalData-select_age personalData_inputField' name="" id="">
+                                    <option class='personalData-select_option' value="Взрослый">Взрослый</option>
+                                    <option class='personalData-select_option' value="Детский">Детский</option>
+                                </select>
+                            </div>
+
+                            <div class='personalData-fullName'>
+                                <div class='fullName-item_wrapper fullName-surname'>
+                                    <div class='fullName-item_name'>Фамилия</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField'
+                                        value='Мартынюк'>
+                                </div>
+
+                                <div class='fullName-item_wrapper fullName-name'>
+                                    <div class='fullName-item_name'>Имя</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField'
+                                        value='Ирина'>
+                                </div>
+
+                                <div class='fullName-item_wrapper fullName-patronymic'>
+                                    <div class='fullName-item_name'>Отчество</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField'
+                                        value='Эдуардовна'>
+                                </div>
+
+                            </div>
+
+                            <div class='personalData-birthData'>
+                                <div class='gender_wrapper '>
+                                    <div class='gender_name'>Пол</div>
+                                    <div class='gender_value-container'>
+                                        <div class='gender_value-btn btn personalData_inputField'>M</div>
+                                        <div class='gender_value-btn btn personalData_inputField checked'>Ж</div>
+                                    </div>
+                                </div>
+
+                                <div class='birthday_wrapper'>
+                                    <div class='birthday_name'>Дата рождения</div>
+                                    <input type="text" class='birthday_input personalData_inputField'
+                                        placeholder='ДД/ММ/ГГ'>
+                                </div>
+                            </div>
+
+                            <div class='personalData-mobility'>
+                                <input type="checkbox" checked class="mobility_checkbox personalData_inputField btn">
+                                <label for='mobility-checkbox'>ограниченная подвижность</label>
+                            </div>
+                        </div>
+
+                        <div class='Passenger-Info-documentData Passenger-Info_data'>
+
+                            <div class='documentData-type'>
+                                <div class='documentData-type_fieldName'>Тип документа</div>
+                                <div class='documentData-type_document personalData_inputField'>Паспорт РФ</div>
+
+                            </div>
+
+                            <div class='documentData_inputFields documentData-passport'>
+                                <div class='passport-item_wrapper'>
+                                    <div class='passport-item_name'>Серия</div>
+                                    <input type="text" class='passport-item_input personalData_inputField'
+                                        placeholder='__ __ __ __'>
+                                </div>
+                                <div class='passport-item_wrapper'>
+                                    <div class='passport-item_name'>Номер</div>
+                                    <input type="text" class='passport-item_input personalData_inputField'
+                                        placeholder='__ __ __ __ __ __'>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class='Passenger-Info-nextPassenger Passenger-Info_data'>
+                            <button class='nextPassenger-btn btn'>Следующий пассажир</button>
+                        </div>
+
+
+                    </div>
+
+                    <div class='Passenger-Info active'>
+                        <div class='Passenger-Info-title active'>
+                            <div class='Passenger-Info-btn active btn'></div>
+                            <div class='Info-title_value'>Пассажир 2</div>
+                            <div class='Passenger-Info-btn delete_btn btn'></div>
+                        </div>
+
+                        <div class='Passenger-Info-personalData Passenger-Info_data'>
+                            <div class='personalData-age'>
+                                <select class='personalData-select_age personalData_inputField' name="" id="">
+                                    <option class='personalData-select_option' value="Взрослый">Взрослый</option>
+                                    <option class='personalData-select_option' value="Детский">Детский</option>
+                                </select>
+                            </div>
+
+                            <div class='personalData-fullName'>
+                                <div class='fullName-item_wrapper fullName-surname'>
+                                    <div class='fullName-item_name'>Фамилия</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField' value=''>
+                                </div>
+
+                                <div class='fullName-item_wrapper fullName-name'>
+                                    <div class='fullName-item_name'>Имя</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField' value=''>
+                                </div>
+
+                                <div class='fullName-item_wrapper fullName-patronymic'>
+                                    <div class='fullName-item_name'>Отчество</div>
+                                    <input type="text" class='fullName-item_input personalData_inputField' value=''>
+                                </div>
+
+                            </div>
+
+                            <div class='personalData-birthData'>
+                                <div class='gender_wrapper '>
+                                    <div class='gender_name'>Пол</div>
+                                    <div class='gender_value-container'>
+                                        <div class='gender_value-btn btn personalData_inputField checked'>M</div>
+                                        <div class='gender_value-btn btn personalData_inputField'>Ж</div>
+                                    </div>
+                                </div>
+
+                                <div class='birthday_wrapper'>
+                                    <div class='birthday_name'>Дата рождения</div>
+                                    <input type="text" class='birthday_input personalData_inputField'
+                                        placeholder='ДД/ММ/ГГ'>
+                                </div>
+                            </div>
+
+                            <div class='personalData-mobility'>
+                                <input type="checkbox" checked class="mobility_checkbox personalData_inputField btn">
+                                <label for='mobility-checkbox'>ограниченная подвижность</label>
+                            </div>
+                        </div>
+
+                        <div class='Passenger-Info-documentData Passenger-Info_data'>
+
+                            <div class='documentData-type'>
+                                <div class='documentData-type_fieldName'>Тип документа</div>
+                                <div class='documentData-type_document personalData_inputField'>Свидетельство о рождении
+                                </div>
+
+                            </div>
+
+                            <div class='documentData_inputFields documentData-passport'>
+                                <div class='passport-item_wrapper'>
+                                    <div class='passport-item_name'>Номер</div>
+                                    <input type="text" class='passport-item_input personalData_inputField'
+                                        placeholder='12 символов'>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class='Passenger-Info-nextPassenger Passenger-Info_data'>
+                            <button class='nextPassenger-btn btn'>Следующий пассажир</button>
+                        </div>
+
+
+                    </div>
+
+                    <div class='Passenger-Info inactive'>
+                        <div class='Passenger-Info-title'>
+                            <div class='Passenger-Info-btn btn'></div>
+                            <div class='Info-title_value'>Пассажир 3</div>
+                        </div>
+                    </div>
+
+                    <div class='Passenger-Info add_new_passenger'>
+                        <div class='Passenger-Info-title'>
+                            <div class='Info-title_value'>Добавить пассажира</div>
+                            <div class='Passenger-Info-btn add_btn btn'></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="Order-ChooseSeats-btn_container">
+                    <button class="Order-ChooseSeats-btn btn inactive">Далее</button>
+                </div>
+
+
+
+            </section>
+
+
+
+        </div>
+
+
+    </main>
+
+
+    <footer class="Footer container">
+
+        <div class="Footer-Contacts-container">
+            <address class="Footer-Contacts">
+                <h4 class="Contacts-Title">Свяжитесь с нами</h4>
+                <ul class="Contacts-List">
+                    <li class="Contacts-Item ">
+                        <div class="Contacts-Item_logo contacts-phone"></div>
+                        <div class="Contacts-Item_content">8 (800) 000 00 00</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-mail"></div>
+                        <div class="Contacts-Item_content">inbox@mail.ru</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-skype"></div>
+                        <div class="Contacts-Item_content">tu.train.tickets</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-address"></div>
+                        <div class="Contacts-Item_content">г. Москва<br>
+                            ул. Московская 27-35<br>555 555</div>
+                    </li>
+                </ul>
+            </address>
+
+            <div class="Footer-Subscribe-container">
+                <div class="Footer-Subscribe">
+                    <h4 class="Subscribe-Title">Подписка</h4>
+                    <form action="submit" class="Subscribe-Form">
+                        <div class="Subscribe-Form-title">Будьте в курсе событий</div>
+                        <div class="Subscribe-Input_container">
+                            <input class="Subscribe-Form-input" type="text" placeholder="e-mail">
+                            <button class="Subscribe-Form-button btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="Footer-Social">
+                    <h4 class="Social-Title">Подписывайтесь на нас</h4>
+                    <ul class="Social-List">
+                        <li class="Social-Item">
+
+                            <a href="https://www.youtube.com" class='Social-Item_link social-youtube'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.linkedin.com" class='Social-Item_link social-lnkdin'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.https://plus.google.com/" class='Social-Item_link social-google'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.facebook.com" class='Social-Item_link social-facebook'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.twitter.com" class='Social-Item_link social-twitter'></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="Footer-Logo-container">
+            <div class="Footer-Logo">
+                <span>Лого</span>
+            </div>
+
+            <div class="Footer-PageUpBtn">
+                <a href="" class='Footer-PageUpBtn_link'></a>
+            </div>
+
+            <div class="Footer-Copyright">
+                <span>2018 WEB</span>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+    <script src="datepicker.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
