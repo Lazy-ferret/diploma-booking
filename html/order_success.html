@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking Service (Main page)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="datepicker.min.css">
+
+
+
+</head>
+
+<body class='App'>
+
+    <header class="container Header Header_success">
+        <div class="Header-Logo">
+            <span>Лого</span>
+        </div>
+
+        <div class="Header-Menu">
+            <ul class="Header-Menu_list">
+                <li class="Header-Menu_item">О нас</li>
+                <li class="Header-Menu_item">Как это работает</li>
+                <li class="Header-Menu_item">Отзывы</li>
+                <li class="Header-Menu_item">Контакты</li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container main">
+        <div class="Order-Container Order-Container_success">
+
+            <div class="Order-Success-Modal_container">
+
+                <div class="Success-Modal-title">Благодарим Вас за заказ!</div>
+
+                <div class="Success-Modal">
+
+                    <div class="Modal-orderDetails">
+                        <div class="Modal-orderDetails_field">
+                            <div class="number_fieldName orderDetails_fieldName">№ Заказа</div>
+                            <div class="number_fieldValue">285АА</div>
+                        </div>
+                        <div class="Modal-orderDetails_field">
+                            <div class='price_fieldName orderDetails_fieldName'>Всего</div>
+                            <div class="price_fieldValue">
+                                <span class='price_fieldValue-value'>7 760</span>
+                                <span class='price_fieldValue-rouble'>₽</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Modal-ticketsHint">
+                        <ul class="ticketsHint-List">
+                            <li class="ticketsHint-Item hint-mail">билеты будут отправлены на ваш e-mail</li>
+                            <li class="ticketsHint-Item hint-print">распечатайте и сохраняйте билеты до даты поездки
+                            </li>
+                            <li class="ticketsHint-Item hint-show">предьявите распечатанные билеты при посадке</li>
+                        </ul>
+                    </div>
+
+                    <div class="Modal-successMsg">
+                        <div class="Modal-successMsg-client">
+                            <span class="successMsg-client_name">Ирина Эдуардовна</span>
+                            <span>!</span>
+                        </div>
+                        <div class="Modal-successMsg-message">
+                            <span>Ваш заказ успешно оформлен.</span>
+                            <span>В ближайшее время с вами свяжется наш оператор для подтверждения.</span>
+                        </div>
+                        <div class="Modal-successMsg-gratitude">
+                            Благодарим Вас за оказанное доверие и желаем приятного путешествия!
+                        </div>
+                    </div>
+
+                    <div class="Modal-rateApp">
+                        <div class="Modal-rateApp-field">
+                            <div class="rateApp-field_name">Оценить сервис</div>
+                            <ul class="rateApp-rating_list">
+                                <li class="rateApp-rating_item btn"></li>
+                                <li class="rateApp-rating_item btn"></li>
+                                <li class="rateApp-rating_item btn"></li>
+                                <li class="rateApp-rating_item btn"></li>
+                                <li class="rateApp-rating_item btn"></li>
+                            </ul>
+                        </div>
+
+                        <div class="Modal-toMainBtn-container">
+                            <button class="Modal-toMainBtn btn">Вернуться на главную</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="Footer container">
+
+        <div class="Footer-Contacts-container">
+            <address class="Footer-Contacts">
+                <h4 class="Contacts-Title">Свяжитесь с нами</h4>
+                <ul class="Contacts-List">
+                    <li class="Contacts-Item ">
+                        <div class="Contacts-Item_logo contacts-phone"></div>
+                        <div class="Contacts-Item_content">8 (800) 000 00 00</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-mail"></div>
+                        <div class="Contacts-Item_content">inbox@mail.ru</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-skype"></div>
+                        <div class="Contacts-Item_content">tu.train.tickets</div>
+                    </li>
+                    <li class="Contacts-Item">
+                        <div class="Contacts-Item_logo contacts-address"></div>
+                        <div class="Contacts-Item_content">г. Москва<br>
+                            ул. Московская 27-35<br>555 555</div>
+                    </li>
+                </ul>
+            </address>
+
+            <div class="Footer-Subscribe-container">
+                <div class="Footer-Subscribe">
+                    <h4 class="Subscribe-Title">Подписка</h4>
+                    <form action="submit" class="Subscribe-Form">
+                        <div class="Subscribe-Form-title">Будьте в курсе событий</div>
+                        <div class="Subscribe-Input_container">
+                            <input class="Subscribe-Form-input" type="text" placeholder="e-mail">
+                            <button class="Subscribe-Form-button btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="Footer-Social">
+                    <h4 class="Social-Title">Подписывайтесь на нас</h4>
+                    <ul class="Social-List">
+                        <li class="Social-Item">
+
+                            <a href="https://www.youtube.com" class='Social-Item_link social-youtube'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.linkedin.com" class='Social-Item_link social-lnkdin'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.https://plus.google.com/" class='Social-Item_link social-google'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.facebook.com" class='Social-Item_link social-facebook'></a>
+                        </li>
+                        <li class="Social-Item">
+                            <a href="https://www.twitter.com" class='Social-Item_link social-twitter'></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Footer-Logo-container">
+            <div class="Footer-Logo">
+                <span>Лого</span>
+            </div>
+
+            <div class="Footer-PageUpBtn">
+                <a href="" class='Footer-PageUpBtn_link'></a>
+            </div>
+
+            <div class="Footer-Copyright">
+                <span>2018 WEB</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="datepicker.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
